@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 #Remove stop words
 import nltk
+nltk.data.path.append("./nltk_data/")
 nltk.download('stopwords')
 from nltk.corpus import stopwords
 import json
