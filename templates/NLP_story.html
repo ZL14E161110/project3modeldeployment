@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+
+<!--START!!^^^^^^^^^^^^^^^^^^^^^^^^IN TEMPLATE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <title>Movie Metadata and predictions</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+ <!--D3 cdn-->
+ <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js'></script>
+ <script src='https://d3js.org/d3.v4.min.js'></script>
+ <script src='/static/d3pie.min.js'></script>
+
+
+
+  </head>
+
+<body>
+     <!-- Navigation -->
+    <nav class="navbar navbar-default">
+             <div class="container-fluid">
+               <div class="navbar-header">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#neatNavbar" aria-expanded="false">
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                 </button>
+                 <!--a class="navbar-brand" href="index.html">BLOCKBUSTER or FLOP?!!  </a-->
+                 <a class="navbar-brand" href="index2.html">BLOCKBUSTER or FLOP?!!! <br></br>A MACHINE LEARNING APPROACH... </a>
+               </div>
+               <div class="collapse navbar-collapse" id="#neatNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="prescreendata.html">FEATURE ENGINEERING AND DATA PROBBING</a>
+                            </li>
+                            <li>
+                                <a href="ensemble.html">A PREDICTIVE MODEL USING DATA MODELING USING ENSEMBLE ML</a>
+                            </li>
+                            <li>
+                                <a href="NLP_story.html">A PREDICTIVE MODEL USING NATURAL LANGUAGE PROCESSING, A FEATURE ENGINEERING</a>
+                            </li>
+                            <li>
+                                <a href="wind.html">RANDOM FOREST EVALUATION</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="comparison.html">RESULTS</a>
+                    </li>
+                    <li>
+                        <a href="data.html">CONCLUSION</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="sigline">
+                    <p>
+                      USC DATA ANALYTICS BOOTCAMP| 
+                      TEAM: FANTASTIC 5 
+                      
+                      <br> </br> 
+              MEMBERS: <a href="http://linkedin.com/in/christopher-newbolt-5902a79">CHRIS,</a> 
+                      <a href="HTTP://ESPN.COM">SUE HELEN,</a>  
+                      <a href="https://www.linkedin.com/in/nana-zhuohui-liang-22a9302a">NANA, </a> 
+                      <a href="http://linkedin.com/in/sonia-yang-69504438">SONIA, </a> 
+                      <a href="HTTP://ESPN.COM">LINDSAY</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!--END!!^^^^^^^^^^^^^^^^^^^^^^^^IN TEMPLATE^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+        
+        <!-- ADD INPUT IN THIS SECTION-->
+        
+            <div class="container">
+                <div class="row row-grid">                    
+                    <div class="col-md-8">
+                        <div class="box box-left">
+                        <section id="introNLP">
+                                <hr>
+                            <h1>NLP for Movies Data</h1>
+                            <hr>
+                            <br></br>
+                            <br></br>
+
+							<p class = "lead">Natural Language processing was used to determine if there is a correlation between a posted movie synopsis  and box office revenue.</p>
+                            <br></br>
+                            <p class="lead">Following this Feature Engineering step will be use those vectorized overviews and fit a model to make predictions</p>
+                            <hr>
+							
+							<section id="getdata">
+							<h4><b>Step 1: Getting data</b></h4>
+							<p> Source: Kaggle from IMDB
+                            </p>
+							 
+                            <figure>
+                                        <img id="getdata_1" src="img/getdata_1.png" alt="Getting Data" height="120" width="500">
+                            </figure>
+							
+                            </section>
+							<br>
+							<section id="cleandata">
+							<h4><b>Step 2: Cleaning data</b></h4>
+							<p> In order to obtain quality results, is important to get the best quality from data.
+                            </p>
+							 
+                            <figure>
+                                        <img id="cleandata_1" src="img/cleandata_1.png" alt="Cleaning Data" height="40" width="400">
+                            </figure>
+							<figure>
+                                        <img id="cleandata_2" src="img/cleandata_2.png" alt="Cleaning Data" height="40" width="300">
+                            </figure>
+                            </section>
+                            <br>
+							<section id="featureeng">
+							<h4><b>Step 3: Feature Engineering</b></h4>
+							<p> Includes all transformations required to make data be more consumable for a machine learning model.
+                            </p>
+							<h5><b>Step 3.1: Split data into train and test</b></h5>
+							<p> Train to fit the model and test to make predictions.
+                            </p> 
+                            <figure>
+                                        <img id="featureeng_1" src="img/featureeng_1.png" alt="Split Data" height="50" width="500">
+                            </figure>
+							
+							<h5><b>Step 3.2: Remove stop words</b></h5>
+							<p> "Stopwords" are words which have very little meaning. In NLP it's important to remove anything that doesn't have enough sense in a text, such as: prepositions and conjunctions. We can include regular expressions to remove: punctuation marks, numbers, etc.
+                            </p> 
+                            <figure>
+                                        <img id="featureeng_2" src="img/featureeng_2.png" alt="Remove stop words" height="150" width="800">
+                            </figure>
+							
+							<h5><b>Step 3.3: Tokenize, Vectorize and TF-IDF</b></h5>
+							<p><b> Tokenize:</b> Split text into words. 
+							<b>Vectorize and TF-IDF:</b> Convert our overviews into a number (vector).
+							<br>For this purpose we are using scikit-learn tool with TfidfVectorizer library which allows to make those activities into one step.
+							<br><b>max_features = size of dictionary</b>
+                            </p> 
+                            <figure>
+                                        <img id="featureeng_3" src="img/featureeng_3.png" alt="Tokenize and Vectorize" height="100" width="400">
+                            </figure>
+							<br>
+							<p>Now, our overviews looks like:</p>
+							<figure>
+                                        <img id="featureeng_4" src="img/featureeng_4.png" alt="Overview vectorized" height="100" width="600">
+                            </figure>
+                            </section>
+                           <br>
+						   <section id="runmodel">
+							<h4><b>Step 4: Run the model</b></h4>
+							<p><b> Model: Random Forest Regressor</b>
+							<br>
+							Our data is ready to fit the model, so we are going to use our vectorized overviews and the target will be the <b>revenue</b>.
+                            </p>
+							 
+                            <figure>
+                                        <img id="runmodel_1" src="img/runmodel_1.png" alt="Run model" height="80" width="400">
+                            </figure>
+							<br>
+							<p>Let's see some important features and how correlated are to revenue.
+                            </p>
+							
+							<figure>
+                                        <img id="runmodel_2" src="img/runmodel_2.png" alt="Feature importances" height="150" width="600">
+                            </figure>
+							
+                            </section>
+							<br>
+							<section id="makepredictions">
+							<h4><b>Step 5: Make predictions</b></h4>
+							<p> We are going to use our test data to make some predictions on our trained model.<br>
+							Now we have data with actual revenue and predicted revenue.
+                            </p>
+							 
+                            <figure>
+                                        <img id="makepredictions_1" src="img/makepredictions_1.png" alt="Make predictions" height="150" width="700">
+                            </figure>
+							
+                            </section>
+							<br>
+							<section id="scoremodel">
+							<h4><b>Step 6: Score the model</b></h4>
+							<p> We are going to use r-squared to score the model.<br>
+                            </p>
+							 
+                            <figure>
+                                        <img id="scoremodel_1" src="img/scoremodel_1.png" alt="Score the model" height="100" width="400">
+                            </figure>
+							
+                            </section>
+						   
+						   
+                        </div>
+                    </div>
+                    
+          <!-- DO NOT CHANGE HTML BELOW THIS POINT-->                          
+
+<!--###############################TEMPLATE BELOW##############################-->
+<div class="col-md-4">
+        <div class="box box-right">
+            <h2>Links</h2>
+            <hr>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                    <figure>
+                        <a href="prescreendata.html">
+                       <!--     <img id="landing-viz" src="Temp_Latitude.png" alt="Latitude vs. Temperature">-->
+                          <iframe src="https://giphy.com/embed/KZd26L2o8QXtK" width="85" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-joker-KZd26L2o8QXtK"> Data Probbing</a></p>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                    <figure>
+                        <a href="ensemble.html">
+                        <!--    <img id="landing-viz" src="Humidity_Latitude.png" alt="Random Forest - Classifier"> -->
+                          <iframe src="https://giphy.com/embed/KZd26L2o8QXtK" width="85" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-joker-KZd26L2o8QXtK">Ensemble</a></p>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                    <figure>
+                        <a href="NLP_story.html">
+                         <!--   <img id="landing-viz" src="Cloudiness_Latitude.png" alt="Data Probing Plots"> -->
+                          <iframe src="https://giphy.com/embed/KZd26L2o8QXtK" width="85" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-joker-KZd26L2o8QXtK">NLP</a></p>
+                        </a>
+                    </figure>
+                </div>
+
+                <div class="col-xs-6 col-sm-3 col-md-6">
+                    <figure>
+                        <a href="wind.html">
+                      <!--      <img id="landing-viz" src="Wind_Speed_Latitude.png" alt="Natural Language Processing"> -->
+                          <iframe src="https://giphy.com/embed/KZd26L2o8QXtK" width="85" height="50" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/applause-joker-KZd26L2o8QXtK">Natural Language Processing</a></p>
+                        </a>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<!-- Info Boxes -->
+
+<div class"container-fluid padding">
+    <div class="row padding">
+        <div class="col-md-2">
+            <div class="card">
+                <img class="card-img-top" src="img/sue.jfif" alt="Great Picture" height="150" width="150">
+                <div class="card-body">
+                    <h4 class="card-title"></h4> Sue Helen</h4>
+                    <br></br>
+                    <p class="card-text">BLAH BLAH BLAH BLAH BLAH</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card">
+                    <img class="card-img-top" src="img/bolt.jpeg" alt="Great Picture" height="150" width="150">
+                    <!--a href='https://photos.google.com/share/AF1QipP8Lpvs8RGWVPmL4qBiOfsWFjVkKyfcKS2D1BvlExjHBBpGfqHZQhGOtlPgkR8FCg?key=eXpXMFJ1V1htTmR2YnVlNzFfZTlfcDJlQ3JEOW13&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/GhCu4TNocb_ZfPnRRihkDQ4aNppSJ4AWyO4feoT-AefRXk7c3lcRBiHNI1qDuX7iTAkSJth_JUpu2iNExxnLkQG-2RKYWgjpUEvDTkJYrViAEqV3VWRohJxOlR1q_nqd246TZOOjJA=w2400' width="85" height="50"/></a-->
+                      <div class="card-body">
+                    <h4 class="card-title"></h4> Christopher Newbolt </h4>
+                    <br></br>
+                    <p class="card-text">Currently a lead for the Boeing R&D division, Chris specializes in mechanical parts and assemblies. He is currently improving his understanding of data analytics to compliment and leverage his understanding of mechanical applications and development as well as acquire tools to efficiently tackle large data. </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <div class="card">
+                <img class="card-img-top" src="img/cat.jpg" alt="Great Picture" height="150" width="150">
+                <div class="card-body">
+                    <h4 class="card-title"></h4> Nana</h4>
+                    <br></br>
+                    <p class="card-text">BLAH BLAH BLAH BLAH BLAH</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+                <div class="card">
+                    <img class="card-img-top" src="img/cat.jpg" alt="Great Picture" height="150" width="150">
+                    <div class="card-body">
+                        <h4 class="card-title"></h4> Sonya</h4>
+                        <br></br>
+                        <p class="card-text">BLAH BLAH BLAH BLAH BLAH</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                    <div class="card">
+                        <img class="card-img-top" src="img/cat.jpg" alt="Great Picture" height="150" width="150">
+                        <div class="card-body">
+                            <h4 class="card-title"></h4> Lindsay</h4>
+                            <br></br>
+                            <p class="card-text">BLAH BLAH BLAH BLAH BLAH</p>
+                        </div>
+                    </div>
+                </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous">
+</script>
+
+
+
+
+
+</body>
+
+</html>
+<!--END###############################TEMPLATE ##############################-->

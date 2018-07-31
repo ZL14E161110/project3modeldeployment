@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enter Overview</title>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <body>
+
+
+
+                <div class="container">
+            <div class="jumbotron" style="text-align: center">
+                <h1>Predict Revenue Class</h1>
+                <p>Select Variables here</p>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <form method="POST" action="/predicte" role="form", name="wordform">
+                        <div class="form-group">
+                            <label for="popularity">Popularity Score (Value between 0 and 875)</label>
+                            <input type="number" class="form-control" id="popularity" name="pop" placeholder="Value between 0 and 875" value="0">
+                            <label for="vote_count">Vote Count (Value between 0 and 13752)</label>
+                            <input type="number" class="form-control" id="Vote" name="vote" placeholder="Value between 0 and 13752" value="0">
+                            <label for="genre">Genre</label>
+                            </br>
+                            <select class="form-control" id="genre" name="genre">
+                                <option value="Crime_genre">Crime</option>
+                                <option value="Western_genre">Western</option>
+                                <option value="Adventure_genre">Adventure</option>
+                                <option value="Science Fiction_genre">Science Fiction</option>
+                                <option value="Other_genre">Other</option>
+                            </select>
+                            <label for="Month">Month</label>
+                            </br>
+                            <select class="form-control" id="month" name="month">
+                                <option value="Jan_releaseMon">Jan</option>
+                                <option value="Feb_releaseMon">Feb</option>
+                                <option value="Mar_releaseMon">Mar</option>
+                                <option value="Apr_releaseMon">Apr</option>
+                                <option value="May_releaseMon">May</option>
+                                <option value="Jun_releaseMon">Jun</option>
+                                <option value="Jul_releaseMon">Jul</option>
+                                <option value="Aug_releaseMon">Aug</option>
+                                <option value="Sep_releaseMon">Sep</option>
+                                <option value="Oct_releaseMon">Oct</option>
+                                <option value="Nov_releaseMon">Nov</option>
+                                <option value="Dec_releaseMon">Dec</option>
+                            </select>
+                           
+
+                        </div>
+                        <input type="submit" value="submit" class="btn btn-default">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+    </body>
+
+</html>
