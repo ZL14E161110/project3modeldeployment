@@ -26,6 +26,19 @@ REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]"')
 BAD_SYMBOLS_RE = re.compile('[^0-9a-z #+_]')
 STOPWORDS = set(stopwords.words('english'))
 
+vec = joblib.load("NLP_vectorizer_revenue.pkl")
+vecp = joblib.load("NLP_vectorizer_popularity.pkl")
+clf = joblib.load("NLP_model_revenue.pkl")
+clfp = joblib.load("NLP_model_popularity.pkl")
+svc = joblib.load("1svc_model.pkl")
+nb = joblib.load("2nb_model.pkl")
+knn = joblib.load("3knn_model.pkl")
+lr = joblib.load("4lr_model.pkl")
+nn = joblib.load("5nn_model.pkl")
+gb = joblib.load("6gb_model.pkl")
+rf = joblib.load("7rf_model.pkl")
+enlr = joblib.load("8enlr_model.pkl")
+
 def text_prepare(text):
     """
         text: a string
@@ -131,16 +144,4 @@ def pensemble():
      
 if __name__ == '__main__':
      # Load your vectorizer
-     vec = joblib.load("NLP_vectorizer_revenue.pkl")
-     vecp = joblib.load("NLP_vectorizer_popularity.pkl")
-     clf = joblib.load("NLP_model_revenue.pkl")
-     clfp = joblib.load("NLP_model_popularity.pkl")
-     svc = joblib.load("1svc_model.pkl")
-     nb = joblib.load("2nb_model.pkl")
-     knn = joblib.load("3knn_model.pkl")
-     lr = joblib.load("4lr_model.pkl")
-     nn = joblib.load("5nn_model.pkl")
-     gb = joblib.load("6gb_model.pkl")
-     rf = joblib.load("7rf_model.pkl")
-     enlr = joblib.load("8enlr_model.pkl")
      app.run(debug=True)
