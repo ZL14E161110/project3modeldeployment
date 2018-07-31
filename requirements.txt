@@ -43,9 +43,6 @@ nltk==3.2.4
 numpy==1.13.3
 numpydoc==0.7.0
 oauthlib==2.0.7
-odo==0.5.1
-olefile==0.44
-openpyxl==2.4.8
 pandas==0.20.3
 Pillow==4.2.1
 pkginfo==1.4.1
@@ -57,8 +54,6 @@ scikit-learn==0.19.1
 scipy==0.19.1
 seaborn==0.8
 selenium==3.11.0
-simplegeneric==0.8.1
-singledispatch==3.4.0.3
 Sphinx==1.6.3
 sphinxcontrib-websupport==1.0.1
 splinter==0.7.7
@@ -66,6 +61,4 @@ spyder==3.2.4
 SQLAlchemy==1.1.13
 tensorboard==1.8.0
 tensorflow==1.8.0
-termcolor==1.1.0
-testpath==0.3.1
 
